@@ -1,0 +1,7 @@
+*.suo
+*.config
+*.exe
+*.cache
+*.pdb
+bin/
+obj/
