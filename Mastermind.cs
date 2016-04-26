@@ -16,8 +16,8 @@ namespace Mastermind
             var x = new ColorlistPermutations(all_colors);
             var e = x.GetColorlists();
 
-            foreach (var i in e)
-                Console.WriteLine($"i: {i[0]}, j: {i[1]}, k: {i[2]}, l: {i[3]}");
+            foreach (var i in x.GetColorlists())
+               Console.WriteLine($"i: {i[0]}, j: {i[1]}, k: {i[2]}, l: {i[3]}");
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");

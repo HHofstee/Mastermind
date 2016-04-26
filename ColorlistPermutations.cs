@@ -12,17 +12,30 @@ namespace Mastermind
         public ColorlistPermutations(Color[] all)
         {
             all_colors = all;
+            for (var i = 0; i < all_color_lists.Length; ++i)
+                all_color_lists[i] = ArrayShuffler<Color>.Shuffle((Color []) all_colors.Clone());
         }
 
         public IEnumerable<Color[]> GetColorlists()
         {
-            foreach (var i in ArrayShuffler<Color>.Shuffle(all_colors))
-                foreach (var j in ArrayShuffler<Color>.Shuffle(all_colors))
-                    foreach (var k in ArrayShuffler<Color>.Shuffle(all_colors))
-                        foreach (var l in ArrayShuffler<Color>.Shuffle(all_colors))
-                            yield return new Color[] { i, j, k, l };
+            foreach(var e in GetColorlists(all_color_lists))
+                yield return e;
+        }
+
+        private static IEnumerable<Color[]> GetColorlists(Color[][] l)
+        {
+            if (l.Length != 0)
+                foreach (var color in l[0])
+                    if (l.Length != 1)
+                    {
+                        foreach (var perm in GetColorlists(l.Skip(1).ToArray())) // recursion with list minus the head
+                            yield return (Color[])(new Color[] { color }).Concat(perm).ToArray();
+                    }
+                    else
+                        yield return new Color[] { color };
         }
 
         private Color[] all_colors;
+        private Color[][] all_color_lists = new Color[4][];
     }
 }
