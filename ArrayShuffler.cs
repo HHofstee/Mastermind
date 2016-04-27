@@ -8,10 +8,12 @@ namespace Mastermind
 {
     class ArrayShuffler<T>
     {
-        public static T[] Shuffle(T[] a)
+        public T[] Shuffle(T[] a)
         {
-            new Random().Shuffle<T>(a);
+            random.Shuffle<T>(a);
             return a;
         }
+
+        System.Random random = new Random();
     }
 }

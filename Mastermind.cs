@@ -11,7 +11,7 @@ namespace Mastermind
     {
         static void Main(string[] args)
         {
-            Color[] all_colors = { Color.Yellow, Color.Orange, Color.Blue, Color.Green, Color.Red, Color.Purple };
+            Color[] all_colors = { Color.Yellow, Color.Orange , Color.Blue, Color.Green, Color.Red, Color.Purple };
 
             var x = new ColorlistPermutations(all_colors);
             var e = x.GetColorlists();
