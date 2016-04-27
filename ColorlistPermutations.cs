@@ -11,13 +11,9 @@ namespace Mastermind
     {
         public ColorlistPermutations(Color[] all)
         {
-            var shuffler = new ArrayShuffler<Color>();
-
             all_colors = all;
             for (var i = 0; i < all_color_lists.Length; ++i)
-            {
-                all_color_lists[i] = shuffler.Shuffle((Color[]) all_colors.Clone());
-            }
+                all_color_lists[i] = ArrayShuffler<Color>.Shuffle((Color[]) all_colors.Clone());
         }
 
         public IEnumerable<Color[]> GetColorlists()
@@ -39,7 +35,7 @@ namespace Mastermind
                         yield return new Color[] { color };
         }
 
-        private Color[] all_colors;
+        private readonly Color[] all_colors;
         private Color[][] all_color_lists = new Color[4][];
     }
 }

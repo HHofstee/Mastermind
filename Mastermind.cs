@@ -12,6 +12,9 @@ namespace Mastermind
         static void Main(string[] args)
         {
             Color[] all_colors = { Color.Yellow, Color.Orange , Color.Blue, Color.Green, Color.Red, Color.Purple };
+            Color[] random_color_list = RandomColorList.GetList(all_colors);
+
+            Console.WriteLine($"Randomlist: {random_color_list[0]}, {random_color_list[1]}, {random_color_list[2]}, {random_color_list[3]}");
 
             var x = new ColorlistPermutations(all_colors);
             var e = x.GetColorlists();
