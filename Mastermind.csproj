@@ -47,6 +47,8 @@
     <Compile Include="ArrayShuffler.cs" />
     <Compile Include="ColorlistPermutations.cs" />
     <Compile Include="Judge.cs" />
+    <Compile Include="KnowledgeBase.cs" />
+    <Compile Include="KnowledgeItem.cs" />
     <Compile Include="Mastermind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomColorList.cs" />
