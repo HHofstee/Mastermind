@@ -26,6 +26,7 @@ namespace Mastermind
                         {
                             matched[j] = true;
                             result = result.Concat(new Color[] { Color.White }).ToArray();
+                            break;
                         }
 
             return result;
